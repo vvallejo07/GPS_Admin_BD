@@ -25,7 +25,6 @@ function llenarRutas(){
 			for(i=0; i<largo; i++){
 				$('#bdRuta').append('<option val="'+ i +'">'+ res.rows.item(i).nombre +'</option>');
 			}
-			alert($("#bdRuta option:first").val());
 			obtenerClientes($("#bdRuta option:first").val());
 		},function(err){
 			alert('Error: '+err.code);	

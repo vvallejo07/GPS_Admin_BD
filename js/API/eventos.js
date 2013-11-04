@@ -11,12 +11,12 @@ $(document).ready(function(){
 		});
 		
 		$('#bdRuta').change(function(){
-			alert($( "#bdRuta option:selected" ).text());
+			obtenerClientes($( "#bdRuta option:selected" ).text());
 		});
 });
 
 function llenarClientes(clientes){
-	for(i=0; i<rutas.length; i++){
-		$('#bdRuta').append('<option val="'+ clientes.value +'">'+ clientes.label +'</option>');
+	for(i=0; i<clientes.length; i++){
+		$('#bdClient').append('<option val="'+ clientes[i].value +'">'+ clientes[i].label +'</option>');
 	}
 }
