@@ -7,14 +7,20 @@ function getBD(){
 function actualizarBD(rutas){
 	getBD().transaction(function(tx){
 			tx.executeSql('CREATE TABLE IF NOT EXISTS rutas (id unique, nombre)');
-			for(i=0; i<rutas.length; i++){
-				tx.executeSql('INSERT INTO rutas (nombre) VALUES ("'+rutas[i].label+'")');
-			}
 		},function(err){
 			alert('Error: ' + err.code);
 		}, function(){
-			navigator.notification.alert('Exitosamente',null,'Datos Guardados','Aceptar');	
+			navigator.notification.alert('Exitosamente',null,'Datos Almacenados','Aceptar');	
 		})
+	for(i=0; i<rutas.length; i++){
+		getBD().transaction(function(tx){
+				tx.executeSql('INSERT INTO rutas (nombre) VALUES ("'+rutas[i].label+'")');
+			},function(err){
+				alert('Error: ' + err.code);
+			}, function(){
+				navigator.notification.alert('Exitosamente',null,'Datos Guardados','Aceptar');	
+			})
+	}
 }
 
 function llenarRutas(){
