@@ -21,9 +21,10 @@ $(document).ready(function(){
 		  }
 		  
 		  $(this).simpledialog({
-			'mode' : 'bool',
-			'prompt' : dirTxt,
-			'useModal': true,
+			mode: 'button',
+			headerText: 'Datos',
+			headerClose: true,
+			buttonPrompt: dirTxt,
 			'buttons' : {
 			  'OK': {
 				click: function () {
