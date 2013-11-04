@@ -14,3 +14,9 @@ $(document).ready(function(){
 			alert($( "#bdRuta option:selected" ).text());
 		});
 });
+
+function llenarClientes(clientes){
+	for(i=0; i<rutas.length; i++){
+		$('#bdRuta').append('<option val="'+ clientes.value +'">'+ clientes.label +'</option>');
+	}
+}
