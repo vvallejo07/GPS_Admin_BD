@@ -20,7 +20,7 @@ function obtenerRutas(url){
 
 function obtenerClientes(ruta){
 	$.ajax({
-        url: "http://192.168.1.97:8081/qro/find/clientsbyrutas",
+        url: "http://192.168.1.97:8081/facturador/qro/find/clientsbyrutas",
         type: "GET",        
         dataType: "JSON",
 		data: {ruta : ruta},
