@@ -16,7 +16,6 @@ $(document).ready(function(){
 		
 		$('#simplebool').tap(function(){
 		  var dirTxt = $("#bdClient option:selected").attr('dir');
-		  
 		  if(dirTxt === "undefined" || dirTxt === ''){
 			  dirTxt = "No cuenta con dirección establecida";
 		  }
