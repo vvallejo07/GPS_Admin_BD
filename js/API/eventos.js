@@ -34,3 +34,8 @@ function onSuccess(pos){
 	updateBdClientes($( "#bdClient option:selected" ).val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );
 }
+
+function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }

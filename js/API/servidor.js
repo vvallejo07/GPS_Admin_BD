@@ -41,7 +41,7 @@ function obtenerClientes(ruta){
 function updateBdClientes(id, nota, lat, long){
 	$.ajax({
         url: "http://192.168.1.97:8081/facturador/qro/update/client",
-        type: "GET",        
+        type: "POST",        
         dataType: "JSON",
 		data: {id : id, nota : nota, latitud : lat, longitud : long},
 		beforeSend: function(x) {
