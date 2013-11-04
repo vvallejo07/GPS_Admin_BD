@@ -15,8 +15,22 @@ $(document).ready(function(){
 		});
 });
 
-function llenarClientes(clientes){
+function llenarClientes(clientes){ 
+	$('#bdClient').empty();
 	for(i=0; i<clientes.length; i++){
 		$('#bdClient').append('<option val="'+ clientes[i].value +'">'+ clientes[i].label +'</option>');
 	}
+}
+
+function sendData(){
+	document.addEventListener("deviceready",libReady(), false);
+}
+
+function libReady(){
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+}
+
+function onSuccess(pos){
+	updateBdClientes($( "#bdClient option:selected" ).val(), $("#nota").val(),
+	pos.coords.latitude, pos.coords.longitude );
 }

@@ -22,6 +22,7 @@ function llenarRutas(){
 	getBD().transaction(function(tx){
 		tx.executeSql('SELECT * FROM rutas',[],function(tx2,res){
 			var largo = res.rows.length;
+			$('#bdRuta').empty();
 			for(i=0; i<largo; i++){
 				$('#bdRuta').append('<option val="'+ i +'">'+ res.rows.item(i).nombre +'</option>');
 			}
