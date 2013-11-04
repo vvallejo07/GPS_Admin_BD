@@ -13,6 +13,27 @@ $(document).ready(function(){
 		$('#bdRuta').change(function(){
 			obtenerClientes($( "#bdRuta option:selected" ).text());
 		});
+		
+		$('#simplebool').tap(function(){
+		  var dirTxt = $("#bdClient option:selected").attr('dir');
+		  
+		  if(dirTxt === "undefined" || dirTxt === ''){
+			  dirTxt = "No cuenta con dirección establecida";
+		  }
+		  
+		  $(this).simpledialog({
+			'mode' : 'bool',
+			'prompt' : dirTxt,
+			'useModal': true,
+			'buttons' : {
+			  'OK': {
+				click: function () {
+				  $('#dialogoutput').text('OK');
+				}
+			  }
+			}
+		  })
+		})
 });
 
 function llenarClientes(clientes){ 
@@ -39,3 +60,5 @@ function onError(error) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
+	
+	

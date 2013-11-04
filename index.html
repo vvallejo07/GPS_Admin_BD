@@ -5,10 +5,12 @@
 <title>Aplic. Web de jQuery Mobile</title>
 <link href="css/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
 <link href="css/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile.simpledialog.min.css" rel="stylesheet" type="text/css"/>
 <script src="phonegap.js"></script>
 <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="js/jquery.mobile-1.0.min.js" type="text/javascript"></script>
 
+<script src="js/API/jquery.mobile.simpledialog.min.js" type="text/javascript"></script>
 <script src="js/API/eventos.js" type="text/javascript"></script>
 <script src="js/API/servidor.js" type="text/javascript"></script>
 <script src="js/API/almacenamiento.js" type="text/javascript"></script>
@@ -46,16 +48,15 @@
             <li>
             	<select id="bdClient"></select>
             </li>
+            <li>
+				<a href="#" id="simplebool" data-role="button" data-inline="true" data-theme="b">Dirección</a>
+            </li>
             <li data-role="list-divider">Notas</li>
             <li>
             	<textarea id="nota"></textarea>
             </li>
             <button onClick="sendData();">Actualizar Cliente</button>
         </ul>	
-        <a href="#page4" data-rel="popup">Open Popup</a>
-
-<div data-role="popup" id="popupBasic">
-	<p>This is a completely basic popup, no options set.<p>
 </div>
 	</div>
 </div>
