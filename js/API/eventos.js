@@ -3,7 +3,7 @@ $(document).ready(function(){
 	
 		//Sincronizar
 		$('#sinc').tap(function(){
-			obtenerRutas("http://192.168.1.97:8081/facturador/qro/find/rutas");
+			obtenerRutas();
 		});
 		
 		$('#datos').tap(function(){
