@@ -23,6 +23,7 @@ function obtenerClientes(ruta){
         url: "http://192.168.1.97:8081/qro/find/clientsbyrutas",
         type: "GET",        
         dataType: "JSON",
+		data: {ruta : ruta},
 		beforeSend: function(x) {
 			if (x && x.overrideMimeType) {
 			  x.overrideMimeType("application/json;charset=UTF-8");
