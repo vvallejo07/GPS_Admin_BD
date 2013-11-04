@@ -24,7 +24,6 @@
 		<ul data-role="listview" data-inset="true">
 			<li id="sinc" ><a href="#">Sincronizar Rutas</a></li>
             <li id="datos"><a href="#page3">Actualizar Cliente</a></li>
-			<li><a href="#page4">Ver Mapa</a></li>
 		</ul>		
 	</div>
 	<div data-role="footer" data-position="fixed">
@@ -52,7 +51,12 @@
             	<textarea id="nota"></textarea>
             </li>
             <button onClick="sendData();">Actualizar Cliente</button>
-        </ul>		
+        </ul>	
+        <a href="#page4" data-rel="popup">Open Popup</a>
+
+<div data-role="popup" id="popupBasic">
+	<p>This is a completely basic popup, no options set.<p>
+</div>
 	</div>
 </div>
 
