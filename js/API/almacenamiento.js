@@ -19,7 +19,7 @@ function actualizarBD(rutas){
 }
 
 function llenarRutas(){
-	accesoBD().transaction(function(tx){
+	getBD().transaction(function(tx){
 		tx.executeSql('SELECT * FROM rutas',[],function(tx2,res){
 			var largo = res.rows.length;
 			for(i=0; i<largo; i++){
