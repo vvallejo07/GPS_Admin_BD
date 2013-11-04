@@ -23,6 +23,7 @@ function llenarRutas(){
 		tx.executeSql('SELECT * FROM rutas',[],function(tx2,res){
 			var largo = res.rows.length;
 			for(i=0; i<largo; i++){
+				alert(res.rows.item(i).nombre);
 				$('#bdRuta').append('<option val="'+ i +'">'+ res.rows.item(i).nombre +'</option>');
 			}
 		},function(err){
