@@ -31,7 +31,8 @@ function libReady(){
 }
 
 function onSuccess(pos){
-	updateBdClientes($( "#bdClient option:selected" ).val(), $("#nota").val(),
+	alert($("#bdClient option:selected").val());
+	updateBdClientes($("#bdClient option:selected").val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );
 }
 
