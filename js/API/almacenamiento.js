@@ -7,7 +7,7 @@ function getBD(){
 function actualizarBD(rutas){
 	getBD().transaction(function(tx){
 			tx.executeSql('CREATE TABLE IF NOT EXISTS rutas (id unique, nombre)');
-			
+			tx.executeSql('DELETE from rutas');
 			for(i=0; i<rutas.length; i++){
 				tx.executeSql('INSERT INTO rutas (nombre) VALUES ("'+rutas[i].label+'")');
 			}
