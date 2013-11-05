@@ -21,20 +21,8 @@ function llenarClientes(clientes){
 	for(i=0; i<clientes.length; i++){
 		$('#bdClient').append('<option dir="'+ clientes[i].direccion +'" value="'+ clientes[i].value +'">'+ clientes[i].label +'</option>');
 	}*/
-	var currencies = [
-    { value: 'Afghan afghani', data: 'AFN' },
-    { value: 'Albanian lek', data: 'ALL' },
-    { value: 'Algerian dinar', data: 'DZD' },
-    { value: 'European euro', data: 'EUR' },
-    { value: 'Angolan kwanza', data: 'AOA' },
-    { value: 'East Caribbean dollar', data: 'XCD' },
-    { value: 'Vietnamese dong', data: 'VND' },
-    { value: 'Yemeni rial', data: 'YER' },
-    { value: 'Zambian kwacha', data: 'ZMK' },
-    { value: 'Zimbabwean dollar', data: 'ZWD' },
-  ];
-		$('#autocomplete').autocomplete({
-		lookup: currencies,
+	 $('#autocomplete').autocomplete({
+		lookup: clientes,
 		onSelect: function (client) {
 		  var thehtml = '<strong>Nombre Comercial:</strong> ' + client.direccion + ' <br> <strong>Geolocalizacion:</strong> ' + client.direccion;
       $('#outDireccion').html(thehtml);
