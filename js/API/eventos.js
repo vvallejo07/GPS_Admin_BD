@@ -21,10 +21,9 @@ $(document).ready(function(){
 		  }
 		  
 		  $(this).simpledialog({
-			mode: 'button',
-			headerText: 'Datos',
-			headerClose: true,
-			buttonPrompt: dirTxt,
+			'mode' : 'bool',
+			'prompt' : dirTxt,
+			'useModal': true,
 			'buttons' : {
 			  'OK': {
 				click: function () {
@@ -39,7 +38,7 @@ $(document).ready(function(){
 function llenarClientes(clientes){ 
 	$('#bdClient').empty();
 	for(i=0; i<clientes.length; i++){
-		$('#bdClient').append('<option dir="'+ clientes[i].direccion +'" value="'+ clientes[i].value +'">'+ clientes[i].label +'</option>');
+		$('#bdClient').append('<li><a href="#">'+clientes[i].label+'</a></li>');
 	}
 }
 
