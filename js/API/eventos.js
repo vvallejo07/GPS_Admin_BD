@@ -24,8 +24,9 @@ function llenarClientes(clientes){
 	 $('#autocomplete').autocomplete({
 		lookup: clientes,
 		onSelect: function (client) {
-		  var thehtml = '<strong>Nombre Comercial:</strong> ' + client.direccion + ' <br> <strong>Geolocalizacion:</strong> ' + client.direccion;
-      $('#outDireccion').html(thehtml);
+		  $('#outDireccion').html(client.direccion);
+		  $('#outGeo').html(client.geo);
+		  $('#codCliente').val(client.label);
 		}
 	  });
 }
@@ -39,7 +40,7 @@ function libReady(){
 }
 
 function onSuccess(pos){
-	updateBdClientes($("#bdClient option:selected").val(), $("#nota").val(),
+	updateBdClientes($('#codCliente').val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );
 }
 

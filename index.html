@@ -36,7 +36,7 @@
 		<h1>Clientes</h1>
 	</div>
 	<div data-role="content">
-    
+    	<input id="codCliente" type="hidden"/>
     	<ul data-role="listview" data-inset="false" data-dividertheme="a">
             <li data-role="list-divider">Ruta</li>
             <li>
@@ -49,17 +49,15 @@
   </div><!-- @end #searchfield -->
    
   <div id="outputbox">
-    <p id="outputcontent">Choose a currency and the results will display here.</p>
+    <p id="outDireccion"></p>
+    <p id="outGeo"></p>
   </div>
-            </li>
-            <li>
-				<a href="#" id="simplebool" data-inline="true">Validar Dirección</a>
             </li>
             <li data-role="list-divider">Notas</li>
             <li>
             	<textarea id="nota"></textarea>
             </li>
-            <button onClick="sendData();">Actualizar Cliente</button>
+            <button onClick="sendData();">Aplicar Coordenadas</button>
         </ul>	
 </div>
 	</div>
