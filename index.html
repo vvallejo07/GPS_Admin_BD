@@ -29,9 +29,6 @@
             <li id="datos"><a href="#page3">Actualizar Cliente</a></li>
 		</ul>		
 	</div>
-	<div data-role="footer" data-position="fixed">
-		<h4>Aplicación Administrador</h4>
-	</div>
 </div>
 
 <div data-role="page" id="page3">
@@ -40,22 +37,21 @@
 	</div>
 	<div data-role="content">
     
-    <div id="searchfield">
-    <form><input type="text" name="currency" class="biginput" id="autocomplete"></form>
-  </div><!-- @end #searchfield -->
-   
-  <div id="outputbox">
-    <p id="outputcontent">Choose a currency and the results will display here.</p>
-  </div>
-    
-		<ul data-role="listview" data-inset="false" data-dividertheme="a">
+    	<ul data-role="listview" data-inset="false" data-dividertheme="a">
             <li data-role="list-divider">Ruta</li>
             <li>
             	<select id="bdRuta"></select>
             </li>
             <li data-role="list-divider">Clientes</li>
             <li>
-            	<select id="bdClient"></select>
+            	<div id="searchfield">
+    <form><input type="text" name="currency" class="biginput" id="autocomplete"></form>
+  </div><!-- @end #searchfield -->
+   
+  <div id="outputbox">
+    <p id="outDireccion"></p>
+    <p id="outGeolocalizacion"></p>
+  </div>
             </li>
             <li>
 				<a href="#" id="simplebool" data-inline="true">Validar Dirección</a>
