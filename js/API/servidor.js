@@ -1,7 +1,7 @@
 //Servidor
 function obtenerRutas(){
 	$.ajax({
-        url: "http://landcserver3.no-ip.org:9990/facturador/qro/find/rutas",
+        url: "http://192.168.1.95:8081/facturador/qro/find/rutas",
         type: "GET",        
         dataType: "JSON",
 		beforeSend: function(x) {
@@ -20,7 +20,7 @@ function obtenerRutas(){
 
 function obtenerClientes(ruta){
 	$.ajax({
-        url: "http://landcserver3.no-ip.org:9990/facturador/qro/find/clientsbyrutas",
+        url: "http://192.168.1.95:8081/facturador/qro/find/clientsbyrutas",
         type: "GET",        
         dataType: "JSON",
 		data: {ruta : ruta},
@@ -40,7 +40,7 @@ function obtenerClientes(ruta){
 
 function updateBdClientes(id, nota, lat, long){
 	$.ajax({
-        url: "http://landcserver3.no-ip.org:9990/facturador/qro/update/client",
+        url: "http://192.168.1.95:8081/facturador/qro/update/client",
         type: "POST",        
         dataType: "JSON",
 		data: {id : id, nota : nota, latitud : lat, longitud : long},
