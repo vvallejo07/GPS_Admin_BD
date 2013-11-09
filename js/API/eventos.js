@@ -1,4 +1,6 @@
 //Eventos
+var watchId = null;
+
 $(document).ready(function(){
 	
 		//Sincronizar
@@ -36,14 +38,13 @@ function sendData(){
 }
 
 function libReady(){
-	/*var options = { enableHighAccuracy: true }; 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);*/
-	var watchID = navigator.geolocation.watchPosition( function (pos){
-			navigator.notification.alert(pos.coords.latitude + ' # ' + pos.coords.longitude,null,'Cliente','Aceptar');
-			navigator.geolocation.clearWatch(watchID);
-	}
-, onError, { enableHighAccuracy: true });
-	
+	var options = {maximumAge: 0, timeout: 10000, enableHighAccuracy:true};
+	watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
+}
+
+function onSuccess(pos){
+	navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
+	navigator.geolocation.clearWatch(watchId);
 }
 
 function onError(error) {
