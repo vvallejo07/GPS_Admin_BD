@@ -37,13 +37,13 @@ function sendData(){
 
 function libReady(){
 	var options = { enableHighAccuracy: true }; 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }
 
 function onSuccess(pos){
 	/*updateBdClientes($('#codCliente').val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );*/
-	navigator.notification.alert(pos.coords.latitude + ' // ' + pos.coords.longitude,null,'Cliente','Aceptar');	
+	navigator.notification.alert(pos.coords.latitude + ' -- ' + pos.coords.longitude,null,'Cliente','Aceptar');	
 	
 }
 
