@@ -40,8 +40,8 @@ function sendData(){
 function libReady(){
 	/*var options = { enableHighAccuracy: true }; 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);*/
-	geoCount = geoCount + 1;
 	var watchID = navigator.geolocation.watchPosition( function (pos){
+		geoCount = geoCount + 1;
 		if(geoCount == 4){
 			navigator.notification.alert(pos.coords.latitude + ' #-# ' + pos.coords.longitude,null,'Cliente','Aceptar');
 			navigator.geolocation.clearWatch(watchID);
