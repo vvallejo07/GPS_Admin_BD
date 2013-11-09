@@ -46,11 +46,7 @@ function libReady(){
 function onSuccess(pos){
 	/*updateBdClientes($('#codCliente').val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );*/
-	/*navigator.notification.alert(pos.coords.latitude + ' -- ' + pos.coords.longitude,null,'Cliente','Aceptar');	*/
-	 var element = document.getElementById('geolocation');
-    element.innerHTML = 'Latitud: '  + position.coords.latitude      + '<br />' +
-                        'Longitud: ' + position.coords.longitude     + '<br />' +
-                        '<hr />'      + element.innerHTML;
+	navigator.notification.alert(pos.coords.latitude + ' ## ' + pos.coords.longitude,null,'Cliente','Aceptar');	
 	
 }
 
