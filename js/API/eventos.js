@@ -1,4 +1,5 @@
 //Eventos
+var geoCount = 0;
 $(document).ready(function(){
 	
 		//Sincronizar
@@ -32,12 +33,27 @@ function llenarClientes(clientes){
 }
 
 function sendData(){
-	document.addEventListener("deviceready",function(){
-                navigator.geolocation.getCurrentPosition(function(pos){
-                        alert(pos.coords.latitude+"/"+pos.coords.longitude);
-                }, function(err){
-                        alert('Error: '+err.code);
-                });
-        }, false);
+	geoCount = 0;
+	document.addEventListener("deviceready",libReady(), false);
 }
 
+function libReady(){
+	/*var options = { enableHighAccuracy: true }; 
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);*/
+	geoCount = geoCount + 1;
+	var watchID = navigator.geolocation.watchPosition( function (pos){
+		if(geoCount == 4){
+			navigator.notification.alert(pos.coords.latitude + ' #-# ' + pos.coords.longitude,null,'Cliente','Aceptar');
+			navigator.geolocation.clearWatch(watchID);
+		}
+	}
+, onError, { enableHighAccuracy: true });
+	
+}
+
+function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+	
+	
