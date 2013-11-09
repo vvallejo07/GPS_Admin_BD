@@ -43,7 +43,7 @@ function libReady(){
 function onSuccess(pos){
 	/*updateBdClientes($('#codCliente').val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );*/
-	navigator.notification.alert(pos.coords.latitude + ' / ' + pos.coords.longitude,null,'Cliente','Aceptar');	
+	navigator.notification.alert(pos.coords.latitude + ' // ' + pos.coords.longitude,null,'Cliente','Aceptar');	
 	
 }
 
