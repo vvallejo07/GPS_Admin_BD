@@ -36,6 +36,7 @@ function sendData(){
 }
 
 function libReady(){
+	var options = { enableHighAccuracy: true }; 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
