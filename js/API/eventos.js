@@ -39,7 +39,7 @@ function libReady(){
 	/*var options = { enableHighAccuracy: true }; 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);*/
 	
-	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { frequency: 3000 });
+	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true });
 	
 }
 
