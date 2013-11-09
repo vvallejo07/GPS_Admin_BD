@@ -36,13 +36,17 @@ function sendData(){
 }
 
 function libReady(){
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });	
+	/*var options = { enableHighAccuracy: true }; 
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);*/
+	
+	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true });
+	
 }
 
 function onSuccess(pos){
 	/*updateBdClientes($('#codCliente').val(), $("#nota").val(),
 	pos.coords.latitude, pos.coords.longitude );*/
-	navigator.notification.alert(pos.coords.latitude + ' NUEVA ' + pos.coords.longitude,null,'Cliente','Aceptar');	
+	navigator.notification.alert(pos.coords.latitude + ' ## ' + pos.coords.longitude,null,'Cliente','Aceptar');	
 	
 }
 
