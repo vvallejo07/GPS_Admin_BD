@@ -32,27 +32,12 @@ function llenarClientes(clientes){
 }
 
 function sendData(){
-	document.addEventListener("deviceready",libReady(), false);
+	document.addEventListener("deviceready",function(){
+                navigator.geolocation.getCurrentPosition(function(pos){
+                        alert(pos.coords.latitude+"/"+pos.coords.longitude);
+                }, function(err){
+                        alert('Error: '+err.code);
+                });
+        }, false);
 }
 
-function libReady(){
-	/*var options = { enableHighAccuracy: true }; 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError, options);*/
-	
-	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true });
-	
-}
-
-function onSuccess(pos){
-	/*updateBdClientes($('#codCliente').val(), $("#nota").val(),
-	pos.coords.latitude, pos.coords.longitude );*/
-	navigator.notification.alert(pos.coords.latitude + ' #-# ' + pos.coords.longitude,null,'Cliente','Aceptar');	
-	
-}
-
-function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    }
-	
-	
