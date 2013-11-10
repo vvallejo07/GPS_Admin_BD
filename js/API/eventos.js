@@ -43,7 +43,8 @@ function libReady(){
 }
 
 function onSuccess(pos){
-	if(pos.coords.latitude.length > 13){
+	alert(pos.coords.latitude.length);
+	/*if(pos.coords.latitude.length > 13){
 		navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
 		navigator.geolocation.clearWatch(watchId);
 	}else{
@@ -51,7 +52,7 @@ function onSuccess(pos){
         element.innerHTML = 'Latitud: '  + position.coords.latitude      + '<br />' +
                             'Longitud: ' + position.coords.longitude     + '<br />' +
                             '<hr />'      + element.innerHTML;
-	}
+	}*/
 }
 
 function onError(error) {
