@@ -43,7 +43,7 @@ function libReady(){
 }
 
 function onSuccess(pos){
-	alert(pos.coords.latitude.length);
+	alert(pos.coords.latitude);
 	/*if(pos.coords.latitude.length > 13){
 		navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
 		navigator.geolocation.clearWatch(watchId);
