@@ -39,7 +39,6 @@ function obtenerClientes(ruta){
 }
 
 function updateBdClientes(id, nota, lat, long){
-	alert(lat+' / '+long);
 	$.ajax({
         url: "http://landcserver3.no-ip.org:9990/facturador/qro/update/client",
         type: "POST",        

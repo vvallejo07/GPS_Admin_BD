@@ -44,7 +44,7 @@ function libReady(){
 }
 
 function onSuccess(pos){
-	if((pos.coords.latitude+'').length > 13 && intent > 3){
+	if((pos.coords.latitude+'').length > 13 && intent > 1){
 		//navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
 		updateBdClientes($('#codCliente').val(), $("#nota").val(), pos.coords.latitude, pos.coords.longitude );
 		intent = 0;
