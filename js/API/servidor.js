@@ -50,7 +50,7 @@ function updateBdClientes(id, nota, lat, long){
 			}
         },
         error: function(data) {
-        	alert(data.value);
+        	navigator.notification.alert(data.value,null,'Error','Aceptar');	
         },
         success: function(result) {
 			navigator.notification.alert('Actualizado Exitosamente',null,'Cliente','Aceptar');	
