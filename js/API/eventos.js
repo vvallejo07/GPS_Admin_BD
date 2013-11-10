@@ -44,13 +44,10 @@ function libReady(){
 
 function onSuccess(pos){
 	if((pos.coords.latitude+'').length > 13){
-		navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
+		//navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
+		updateBdClientes($("#bdClient option:selected").val(), $("#nota").val(),
+	pos.coords.latitude, pos.coords.longitude );
 		navigator.geolocation.clearWatch(watchId);
-	}else{
-		var element = document.getElementById('outDireccion');
-        element.innerHTML = 'Latitud: '  + position.coords.latitude      + '<br />' +
-                            'Longitud: ' + position.coords.longitude     + '<br />' +
-                            '<hr />'      + element.innerHTML;
 	}
 }
 
