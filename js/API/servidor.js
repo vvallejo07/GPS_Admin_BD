@@ -53,11 +53,13 @@ function updateBdClientes(id, nota, lat, long){
         	navigator.notification.alert(data.value,null,'Error','Aceptar');	
         },
         success: function(result) {
-			navigator.notification.alert('Actualizado Exitosamente',null,'Cliente','Aceptar');	
 			$('#autocomplete').val('');
 			$('#outDireccion').empty();
 			$('#outGeo').empty();
 			$('#codCliente').empty();
+			$('#nota').empty();
+			obtenerClientes($("#bdRuta option:selected").val());
+			navigator.notification.alert('Actualizado Exitosamente',null,'Cliente','Aceptar');	
         }
 	});
 }
