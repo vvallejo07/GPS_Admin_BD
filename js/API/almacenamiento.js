@@ -5,9 +5,18 @@ function getBD(){
 }
 
 function actualizarBD(rutas){
+	
 	getBD().transaction(function(tx){
 			tx.executeSql('CREATE TABLE IF NOT EXISTS rutas (id unique, nombre)');
 			tx.executeSql('DELETE from rutas');
+		},function(err){
+			alert('Error: ' + err.code);
+		}, function(){
+			
+		})
+	
+	getBD().transaction(function(tx){
+			tx.executeSql('CREATE TABLE IF NOT EXISTS rutas (id unique, nombre)');
 			for(i=0; i<rutas.length; i++){
 				tx.executeSql('INSERT INTO rutas (nombre) VALUES ("'+rutas[i].label+'")');
 			}
@@ -19,10 +28,10 @@ function actualizarBD(rutas){
 }
 
 function llenarRutas(){
+	$('#bdRuta').empty();
 	getBD().transaction(function(tx){
 		tx.executeSql('SELECT * FROM rutas',[],function(tx2,res){
 			var largo = res.rows.length;
-			$('#bdRuta').empty();
 			for(i=0; i<largo; i++){
 				$('#bdRuta').append('<option val="'+ i +'">'+ res.rows.item(i).nombre +'</option>');
 			}

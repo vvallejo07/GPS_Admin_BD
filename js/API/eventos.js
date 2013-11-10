@@ -38,13 +38,20 @@ function sendData(){
 }
 
 function libReady(){
-	var options = {maximumAge: 0, timeout: 10000, enableHighAccuracy:true};
+	var options = { frequency: 500, timeout: 5000, enableHighAccuracy: true };
 	watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
 }
 
 function onSuccess(pos){
-	navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
-	navigator.geolocation.clearWatch(watchId);
+	if(pos.coords.latitude.length > 13){
+		navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
+		navigator.geolocation.clearWatch(watchId);
+	}else{
+		var element = document.getElementById('outDireccion');
+        element.innerHTML = 'Latitud: '  + position.coords.latitude      + '<br />' +
+                            'Longitud: ' + position.coords.longitude     + '<br />' +
+                            '<hr />'      + element.innerHTML;
+	}
 }
 
 function onError(error) {
