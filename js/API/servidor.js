@@ -57,7 +57,7 @@ function updateBdClientes(id, nota, lat, long){
 			$('#autocomplete').val('');
 			$('#outDireccion').empty();
 			$('#outGeo').empty();
-			$('#codCliente').empty();
+			$('#codCliente').val('');
 			$('#nota').val('');
 			obtenerClientes($("#bdRuta option:selected").val());
 			navigator.notification.alert('Actualizado Exitosamente',null,'Cliente','Aceptar');	
