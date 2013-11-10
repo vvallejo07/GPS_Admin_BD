@@ -45,8 +45,7 @@ function libReady(){
 function onSuccess(pos){
 	if((pos.coords.latitude+'').length > 13){
 		//navigator.notification.alert(pos.coords.latitude + ' .. ' + pos.coords.longitude,null,'Cliente','Aceptar');
-		updateBdClientes($('#codCliente').val(), $("#nota").val(),
- -  pos.coords.latitude, pos.coords.longitude );
+		updateBdClientes($('#codCliente').val(), $("#nota").val(), pos.coords.latitude, pos.coords.longitude );
 		navigator.geolocation.clearWatch(watchId);
 	}
 }

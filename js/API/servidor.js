@@ -54,6 +54,10 @@ function updateBdClientes(id, nota, lat, long){
         },
         success: function(result) {
 			navigator.notification.alert('Actualizado Exitosamente',null,'Cliente','Aceptar');	
+			$('#autocomplete').val('');
+			$('#outDireccion').empty();
+			$('#outGeo').empty();
+			$('#codCliente').empty();
         }
 	});
 }
